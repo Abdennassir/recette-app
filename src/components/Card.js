@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card  = ({detail: details}) => {
+const Card  = ({detail: details, id: key, deleteRecette}) => {
 
     const  ingredients = details.ingredients
                                 .split(',')
@@ -17,13 +17,18 @@ const Card  = ({detail: details}) => {
         }
 
     }
+
     return (
         <div className='card'>
             <div className='image'>
                 <img src={requiredImage(details.image)} alt={details.nom} />
             </div>
             <div className='recette'>
-                <h2>{details.nom}</h2>
+                <h2>{details.nom}</h2> 
+                <button
+                
+                onClick = {() =>   deleteRecette(key)}
+                className="btn btn-danger pull-right"> [ - ] Delete </button>
                 <ul className='liste-ingredients'>
                      {ingredients}
                 </ul>

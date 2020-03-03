@@ -4,7 +4,7 @@ export default class AddRecette extends Component {
 
     state = {
         'nom':            '',
-        'photo':          '',
+        'image':          '',
         'ingredients':    '',
         'instructions':   ''
     }
@@ -26,7 +26,8 @@ export default class AddRecette extends Component {
 
     render() {
         return (
-            
+            <div className="col-sm-4">
+            <div className="thumbnails">
                 <form action="/action_page.php" onSubmit={ this.handleAddRecette }>
                     <div className="form-group">
                         <label for="nom">Nom:</label>
@@ -34,7 +35,7 @@ export default class AddRecette extends Component {
                     </div>
                     <div className="form-group">
                         <label for="photo">Photo:</label>
-                        <input type="photo" class="form-control" id="photo" onChange={ this.handleChange } value={  this.state.photo }   />
+                        <input type="photo" class="form-control" id="image" onChange={ this.handleChange } value={  this.state.image }   />
                     </div>
                     <div className="form-group">
                         <label for="ingredients">Ingredients:</label>
@@ -48,7 +49,8 @@ export default class AddRecette extends Component {
                         <button type="submit" class="btn btn-success">Submit</button>
                     </div>
                 </form>
-            
+            </div>
+            </div>
         )
     }
 }
